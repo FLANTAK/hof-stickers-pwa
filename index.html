@@ -1316,7 +1316,7 @@
           </div>
         `;
 
-        card.onclick = () => copyStickerToClipboard(s.file, colorApplied);
+        card.onclick = () => copyStickerToClipboard(s.file, customColors[s.id] || globalColor || '#ffffff');
         grid.appendChild(card);
 
         // Injeta o SVG inline para troca dinâmica instantânea de cor
@@ -1335,9 +1335,13 @@
         const rawSvg = await loadSvgContent(filename);
         if (!rawSvg) throw new Error('SVG not loaded');
 
-        // SVG transparente com a cor aplicada
-        let coloredSvg = rawSvg.replace(/fill="currentColor"/g, `fill="${colorHex}"`);
-        if (!coloredSvg.includes('fill=')) {
+        // Garante aplicação da cor escolhida em fill, stroke e rect
+        let coloredSvg = rawSvg
+          .replace(/fill="currentColor"/g, `fill="${colorHex}"`)
+          .replace(/stroke="currentColor"/g, `stroke="${colorHex}"`)
+          .replace(/<rect([^>]*)\sfill="[^"]*"/g, `<rect$1 fill="${colorHex}"`);
+        
+        if (!coloredSvg.includes(`fill="${colorHex}"`)) {
           coloredSvg = coloredSvg.replace(/<svg([^>]*)>/, `<svg$1 fill="${colorHex}">`);
         }
 
@@ -1539,12 +1543,13 @@
     }
 
     function applyColorChoice(applyToAll) {
-      const hex = '#' + document.getElementById('hexColorInput').value;
+      let hex = document.getElementById('hexColorInput').value.trim();
+      if (!hex.startsWith('#')) hex = '#' + hex;
+
       if (applyToAll) {
         globalColor = hex;
         localStorage.setItem('hof_global_color', hex);
         showToast(`Cor ${hex} aplicada a todas as figurinhas.`);
-        // Altera instantaneamente a cor de todos os SVGs na tela
         document.querySelectorAll('.sticker-art-wrapper').forEach(el => {
           el.style.color = hex;
         });
@@ -1552,10 +1557,18 @@
         customColors[selectedStickerForColor] = hex;
         localStorage.setItem('hof_colors', JSON.stringify(customColors));
         showToast(`Cor ${hex} aplicada nesta figurinha.`);
-        // Altera instantaneamente a cor desta figurinha específica
         const el = document.getElementById(`art_${selectedStickerForColor}`);
         if (el) el.style.color = hex;
       }
+
+      // Atualiza a visualização atual para que o novo clique pegue a cor exata
+      const currentCat = catalog.find(cat => cat.id === currentCategoryId);
+      if (currentCat) {
+        renderCategoryStickers(currentCat);
+      } else if (document.getElementById('appHeaderTitle').textContent === 'Favoritos') {
+        openFavoritesView();
+      }
+
       closeColorModal();
     }
 
