@@ -954,12 +954,24 @@
       <input type="text" id="stickerFilterInput" placeholder="Buscar figurinha..." style="width: 100%; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text); outline: none; font-size: 0.85rem;">
     </div>
 
+    
+    <!-- Banner de 1 Toque para Baixar o App (Vindo do E-mail) -->
+    <div id="directInstallBanner" style="display: none; position: sticky; top: 0; z-index: 100; background: linear-gradient(135deg, #c5a880, #967448); color: #000; padding: 10px 16px; font-weight: 700; font-size: 0.85rem; align-items: center; justify-content: space-between; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span>Instalar Aplicativo Oficial</span>
+      </div>
+      <button onclick="promptPwaInstall()" style="background: #000; color: #fff; border: none; padding: 6px 14px; border-radius: 99px; font-weight: 800; font-size: 0.78rem; cursor: pointer;">
+        BAIXAR AGORA
+      </button>
+    </div>
+
     <main class="app-body" id="appBody">
       <!-- Home / Vitrine -->
       <section id="viewHome">
         <!-- Topo Dark com Gradiente Suave Esfumado -->
         <div class="luxury-dona-hero">
-          <img src="/hero_livia_design.webp" alt="Dra Lyvia Vieira" class="luxury-dona-img">
+          <img src="./hero_livia_design.webp" alt="Dra Lyvia Vieira" class="luxury-dona-img">
           <div class="luxury-dona-gradient"></div>
         </div>
 
@@ -1096,7 +1108,7 @@
 
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
     }
 
     let catalog = [];
@@ -1128,7 +1140,7 @@
 
     async function initApp() {
       try {
-        const res = await fetch('/catalog.json');
+        const res = await fetch('./catalog.json');
         catalog = await res.json();
         renderHomeCategories();
       } catch (e) {
@@ -1264,7 +1276,7 @@
     async function loadSvgContent(filename) {
       if (svgCache[filename]) return svgCache[filename];
       try {
-        const res = await fetch(`/stickers_clean/${filename}`);
+        const res = await fetch(`./stickers_clean/${filename}`);
         const text = await res.text();
         svgCache[filename] = text;
         return text;
@@ -1640,28 +1652,34 @@
     }
     
     
-    // Suporte a Instalação Automática PWA
+    
+    // Suporte a Instalação Automática Direta (1 Clique do E-mail)
     let deferredPrompt = null;
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      const installBtn = document.getElementById('btnPwaInstall');
-      if (installBtn) installBtn.style.display = 'flex';
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('install') === 'true' || window.location.hash === '#install') {
+        promptPwaInstall();
+      }
+
+      const topInstallBar = document.getElementById('directInstallBanner');
+      if (topInstallBar) topInstallBar.style.display = 'flex';
     });
 
     async function promptPwaInstall() {
-      if (!deferredPrompt) {
-        showToast('Para instalar: toque em Compartilhar e depois em "Adicionar à Tela de Início"');
-        return;
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === 'accepted') {
+          showToast('App instalado com sucesso!');
+        }
+        deferredPrompt = null;
+      } else {
+        // Se for iOS ou navegador sem prompt automático
+        showToast('Toque em Compartilhar e depois "Adicionar à Tela de Início"');
       }
-      deferredPrompt.prompt();
-      const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') {
-        showToast('App instalado com sucesso!');
-      }
-      deferredPrompt = null;
-      const installBtn = document.getElementById('btnPwaInstall');
-      if (installBtn) installBtn.style.display = 'none';
     }
 
     window.addEventListener('appinstalled', () => {

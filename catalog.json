@@ -2,7 +2,7 @@
   {
     "id": "cat_01",
     "name": "Planejamento Facial Resultado",
-    "cover_image": "/HOF_Stories_37/01_planejamento_facial_resultado.png",
+    "cover_image": "./HOF_Stories_37/01_planejamento_facial_resultado.png",
     "stickers": [
       {
         "id": "stk_ponto_mira_simples",
@@ -85,7 +85,7 @@
   {
     "id": "cat_02",
     "name": "Analise Facial",
-    "cover_image": "/HOF_Stories_37/02_analise_facial.png",
+    "cover_image": "./HOF_Stories_37/02_analise_facial.png",
     "stickers": [
       {
         "id": "stk_ponto_mira_simples",
@@ -168,7 +168,7 @@
   {
     "id": "cat_03",
     "name": "Linhas Marcas Vetores",
-    "cover_image": "/HOF_Stories_37/03_linhas_marcas_vetores.png",
+    "cover_image": "./HOF_Stories_37/03_linhas_marcas_vetores.png",
     "stickers": [
       {
         "id": "stk_ponto_mira_simples",
@@ -251,7 +251,7 @@
   {
     "id": "cat_04",
     "name": "Experiencia Cliente",
-    "cover_image": "/HOF_Stories_37/04_experiencia_cliente.png",
+    "cover_image": "./HOF_Stories_37/04_experiencia_cliente.png",
     "stickers": [
       {
         "id": "stk_118",
@@ -286,7 +286,7 @@
   {
     "id": "cat_05",
     "name": "Pele Skincare",
-    "cover_image": "/HOF_Stories_37/05_pele_skincare.png",
+    "cover_image": "./HOF_Stories_37/05_pele_skincare.png",
     "stickers": [
       {
         "id": "stk_124",
@@ -321,7 +321,7 @@
   {
     "id": "cat_06",
     "name": "Procedimentos Antes Depois",
-    "cover_image": "/HOF_Stories_37/06_perfiloplastia.png",
+    "cover_image": "./HOF_Stories_37/06_perfiloplastia.png",
     "stickers": [
       {
         "id": "stk_ponto_mira_simples",
@@ -404,7 +404,7 @@
   {
     "id": "cat_07",
     "name": "Frases Impacto HOF",
-    "cover_image": "/HOF_Stories_37/07_atendimento_bastidores.png",
+    "cover_image": "./HOF_Stories_37/07_atendimento_bastidores.png",
     "stickers": [
       {
         "id": "stk_137",
@@ -439,7 +439,7 @@
   {
     "id": "cat_08",
     "name": "Estetica Labial",
-    "cover_image": "/HOF_Stories_37/08_odontologia.png",
+    "cover_image": "./HOF_Stories_37/08_odontologia.png",
     "stickers": [
       {
         "id": "stk_144",
@@ -474,7 +474,7 @@
   {
     "id": "cat_09",
     "name": "Bioestimuladores",
-    "cover_image": "/HOF_Stories_37/09_preenchimento_labial.png",
+    "cover_image": "./HOF_Stories_37/09_preenchimento_labial.png",
     "stickers": [
       {
         "id": "stk_14_2",
@@ -509,7 +509,7 @@
   {
     "id": "cat_10",
     "name": "Toxina Botulinica",
-    "cover_image": "/HOF_Stories_37/10_intercorrencia.png",
+    "cover_image": "./HOF_Stories_37/10_intercorrencia.png",
     "stickers": [
       {
         "id": "stk_151",
@@ -544,7 +544,7 @@
   {
     "id": "cat_11",
     "name": "Harmonizacao Masculina",
-    "cover_image": "/HOF_Stories_37/11_preparar_fim_de_ano.png",
+    "cover_image": "./HOF_Stories_37/11_preparar_fim_de_ano.png",
     "stickers": [
       {
         "id": "stk_158",
@@ -579,7 +579,7 @@
   {
     "id": "cat_12",
     "name": "Rinomodelacao",
-    "cover_image": "/HOF_Stories_37/12_estetica_regenerativa.png",
+    "cover_image": "./HOF_Stories_37/12_estetica_regenerativa.png",
     "stickers": [
       {
         "id": "stk_164",
@@ -614,7 +614,7 @@
   {
     "id": "cat_13",
     "name": "Fios de Sustentacao",
-    "cover_image": "/HOF_Stories_37/13_toxina_botulinica.png",
+    "cover_image": "./HOF_Stories_37/13_toxina_botulinica.png",
     "stickers": [
       {
         "id": "stk_170",
@@ -649,7 +649,7 @@
   {
     "id": "cat_14",
     "name": "Preenchimento Mandibular",
-    "cover_image": "/HOF_Stories_37/14_tecnologias.png",
+    "cover_image": "./HOF_Stories_37/14_tecnologias.png",
     "stickers": [
       {
         "id": "stk_177",
@@ -684,7 +684,7 @@
   {
     "id": "cat_15",
     "name": "Preenchimento Malar",
-    "cover_image": "/HOF_Stories_37/15_feedback_resultados.png",
+    "cover_image": "./HOF_Stories_37/15_feedback_resultados.png",
     "stickers": [
       {
         "id": "stk_183",
@@ -719,7 +719,7 @@
   {
     "id": "cat_16",
     "name": "Olheiras",
-    "cover_image": "/HOF_Stories_37/16_harmonizacao_gluteos.png",
+    "cover_image": "./HOF_Stories_37/16_harmonizacao_gluteos.png",
     "stickers": [
       {
         "id": "stk_187_4",
@@ -754,7 +754,7 @@
   {
     "id": "cat_17",
     "name": "Lifting Temporal",
-    "cover_image": "/HOF_Stories_37/17_envelhecimento_naturalidade.png",
+    "cover_image": "./HOF_Stories_37/17_envelhecimento_naturalidade.png",
     "stickers": [
       {
         "id": "stk_188_6",
@@ -789,7 +789,7 @@
   {
     "id": "cat_18",
     "name": "Glabela Linhas",
-    "cover_image": "/HOF_Stories_37/18_outubro_rosa.png",
+    "cover_image": "./HOF_Stories_37/18_outubro_rosa.png",
     "stickers": [
       {
         "id": "stk_19",
@@ -824,7 +824,7 @@
   {
     "id": "cat_19",
     "name": "Pos Procedimento Cuidados",
-    "cover_image": "/HOF_Stories_37/19_k_beauty.png",
+    "cover_image": "./HOF_Stories_37/19_k_beauty.png",
     "stickers": [
       {
         "id": "stk_192",
@@ -859,7 +859,7 @@
   {
     "id": "cat_20",
     "name": "Consultorio Rotina",
-    "cover_image": "/HOF_Stories_37/20_rinomodelacao.png",
+    "cover_image": "./HOF_Stories_37/20_rinomodelacao.png",
     "stickers": [
       {
         "id": "stk_23",
@@ -894,7 +894,7 @@
   {
     "id": "cat_21",
     "name": "Agendamentos Avisos",
-    "cover_image": "/HOF_Stories_37/21_preenchimento_facial.png",
+    "cover_image": "./HOF_Stories_37/21_preenchimento_facial.png",
     "stickers": [
       {
         "id": "stk_3",
@@ -929,7 +929,7 @@
   {
     "id": "cat_22",
     "name": "Depoimentos Pacientes",
-    "cover_image": "/HOF_Stories_37/22_full_face.png",
+    "cover_image": "./HOF_Stories_37/22_full_face.png",
     "stickers": [
       {
         "id": "stk_36",
@@ -964,7 +964,7 @@
   {
     "id": "cat_23",
     "name": "Autoestima Beleza",
-    "cover_image": "/HOF_Stories_37/23_md_codes.png",
+    "cover_image": "./HOF_Stories_37/23_md_codes.png",
     "stickers": [
       {
         "id": "stk_42",
@@ -999,7 +999,7 @@
   {
     "id": "cat_24",
     "name": "Transformacao Sorriso",
-    "cover_image": "/HOF_Stories_37/24_anatomia_estudos.png",
+    "cover_image": "./HOF_Stories_37/24_anatomia_estudos.png",
     "stickers": [
       {
         "id": "stk_49",
@@ -1034,7 +1034,7 @@
   {
     "id": "cat_25",
     "name": "Tecnologias HOF",
-    "cover_image": "/HOF_Stories_37/25_bioestimulador_colageno.png",
+    "cover_image": "./HOF_Stories_37/25_bioestimulador_colageno.png",
     "stickers": [
       {
         "id": "stk_55",
@@ -1069,7 +1069,7 @@
   {
     "id": "cat_26",
     "name": "Cuidados Diarios",
-    "cover_image": "/HOF_Stories_37/26_bom_dia.png",
+    "cover_image": "./HOF_Stories_37/26_bom_dia.png",
     "stickers": [
       {
         "id": "stk_61",
@@ -1104,7 +1104,7 @@
   {
     "id": "cat_27",
     "name": "Promocoes Campanhas",
-    "cover_image": "/HOF_Stories_37/27_calendario_outubro_2026.png",
+    "cover_image": "./HOF_Stories_37/27_calendario_outubro_2026.png",
     "stickers": [
       {
         "id": "stk_68",
@@ -1139,7 +1139,7 @@
   {
     "id": "cat_28",
     "name": "Seguranca Protocolos",
-    "cover_image": "/HOF_Stories_37/28_cirurgias_face.png",
+    "cover_image": "./HOF_Stories_37/28_cirurgias_face.png",
     "stickers": [
       {
         "id": "stk_74",
@@ -1174,7 +1174,7 @@
   {
     "id": "cat_29",
     "name": "Perguntas Frequentes",
-    "cover_image": "/HOF_Stories_37/29_educacao_rapida.png",
+    "cover_image": "./HOF_Stories_37/29_educacao_rapida.png",
     "stickers": [
       {
         "id": "stk_80",
@@ -1209,7 +1209,7 @@
   {
     "id": "cat_30",
     "name": "Mitos e Verdades",
-    "cover_image": "/HOF_Stories_37/30_estetica_masculina.png",
+    "cover_image": "./HOF_Stories_37/30_estetica_masculina.png",
     "stickers": [
       {
         "id": "stk_87",
@@ -1244,7 +1244,7 @@
   {
     "id": "cat_31",
     "name": "Bastidores Clinica",
-    "cover_image": "/HOF_Stories_37/31_instagram_icones.png",
+    "cover_image": "./HOF_Stories_37/31_instagram_icones.png",
     "stickers": [
       {
         "id": "stk_93",
@@ -1279,7 +1279,7 @@
   {
     "id": "cat_32",
     "name": "Novidades Tendencias",
-    "cover_image": "/HOF_Stories_37/32_lifestyle_viagens_carreira.png",
+    "cover_image": "./HOF_Stories_37/32_lifestyle_viagens_carreira.png",
     "stickers": [
       {
         "id": "stk_sticker_card_18801_3",
@@ -1314,7 +1314,7 @@
   {
     "id": "cat_33",
     "name": "Harmonia Naturalidade",
-    "cover_image": "/HOF_Stories_37/33_produtos_equipamentos.png",
+    "cover_image": "./HOF_Stories_37/33_produtos_equipamentos.png",
     "stickers": [
       {
         "id": "stk_sticker_card_18901_1",
@@ -1349,7 +1349,7 @@
   {
     "id": "cat_34",
     "name": "Rejuvenescimento",
-    "cover_image": "/HOF_Stories_37/34_sombras_elementos.png",
+    "cover_image": "./HOF_Stories_37/34_sombras_elementos.png",
     "stickers": [
       {
         "id": "stk_sticker_card_18902_4",
@@ -1384,7 +1384,7 @@
   {
     "id": "cat_35",
     "name": "Protocolos Exclusivos",
-    "cover_image": "/HOF_Stories_37/35_fios_pdo.png",
+    "cover_image": "./HOF_Stories_37/35_fios_pdo.png",
     "stickers": [
       {
         "id": "stk_sticker_card_18904_3",
@@ -1419,7 +1419,7 @@
   {
     "id": "cat_36",
     "name": "Equipe Profissional",
-    "cover_image": "/HOF_Stories_37/36_devocional.png",
+    "cover_image": "./HOF_Stories_37/36_devocional.png",
     "stickers": [
       {
         "id": "stk_sticker_card_18905_6",
@@ -1454,7 +1454,7 @@
   {
     "id": "cat_37",
     "name": "Agradecimentos Encerramento",
-    "cover_image": "/HOF_Stories_37/37_new_face.png",
+    "cover_image": "./HOF_Stories_37/37_new_face.png",
     "stickers": [
       {
         "id": "stk_sticker_card_19102_1",
