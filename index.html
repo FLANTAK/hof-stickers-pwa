@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="HOF Stories">
+  <meta name="theme-color" content="#12141a">
+  <link rel="manifest" href="/manifest.json">
+  <title>Stories Criativos — HOF</title>
+  <style>
+    :root {
+      --bg: #271c21;
+      --card-bg: #34262c;
+      --card-hover: #403038;
+      --text: #ffffff;
+      --text-muted: #bda8b0;
+      --accent: #e11d48;
+      --border: rgba(255, 255, 255, 0.08);
+      --nav-bg: #21171b;
+    }
+
+    
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      background-color: #1a1215;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Smartphone Formato Exato */
+    .phone-container {
+      width: 100%;
+      max-width: 390px;
+      height: 100vh;
+      max-height: 844px;
+      background-color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px #232734;
+      transition: background-color 0.25s ease;
+    }
+
+    @media (min-width: 500px) {
+      .phone-container {
+        border-radius: 46px;
+        margin: 20px auto;
+        height: 94vh;
+      }
+    }
+
+    .phone-top-sensor {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110px;
+      height: 25px;
+      background: #000;
+      border-radius: 20px;
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    /* Status Bar */
+    .status-bar {
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 24px 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      z-index: 50;
+      background: var(--bg);
+    }
+
+    .status-bar-icons {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.75rem;
+    }
+
+    /* Top Bar Header */
+    .app-header {
+      padding: 6px 16px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 40;
+      background: var(--bg);
+    }
+
+    .app-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .app-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .header-btn {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      transition: background 0.15s;
+    }
+
+    .header-btn:hover {
+      background: var(--card-bg);
+    }
+
+    /* Scroll Area */
+    .app-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0 14px 20px;
+      scroll-behavior: smooth;
+    }
+
+    .app-body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Banner Horizontal */
+    .hero-banner {
+      width: 100%;
+      height: 160px;
+      border-radius: 18px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #1b1e28;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-banner:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 15%, transparent 75%);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .hero-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #38bdf8;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .hero-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+
+    /* 2 Blocos: Figurinhas vs Tutorial */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .split-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 110px;
+      cursor: pointer;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+
+    .split-card:active {
+      transform: scale(0.97);
+    }
+
+    .split-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 6px;
+      background: rgba(225, 29, 72, 0.15);
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .split-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .split-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* 37 Categorias 9:16 APENAS IMAGEM */
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 12px 0 10px;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cat-vertical-card {
+      aspect-ratio: 9 / 16;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: transform 0.15s;
+    }
+
+    .cat-vertical-card:active {
+      transform: scale(0.96);
+      border-color: var(--accent);
+    }
+
+    .cat-vertical-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Navegação Horizontal Pills */
+    .pills-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .pills-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pill-btn {
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .pill-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* Grid de Figurinhas */
+    .stickers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .sticker-card {
+      aspect-ratio: 1 / 1;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      position: relative;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .sticker-card:active {
+      transform: scale(0.95);
+    }
+
+    .sticker-card-topbar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .card-icon-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.3);
+      border: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .card-icon-btn.active-heart {
+      color: var(--accent);
+    }
+
+    /* Visualizador SVG sem fundo */
+    .sticker-art-wrapper {
+      width: 86%;
+      height: 86%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .sticker-art-wrapper svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transition: color 0.15s ease;
+    }
+
+    /* Barra Inferior */
+    .bottom-nav {
+      height: 60px;
+      background: var(--nav-bg);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 8px;
+      z-index: 50;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .nav-item.active {
+      color: var(--accent);
+    }
+
+    .nav-item svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* MODAL CANVA COMPLETO COM GRADIENTE LIVRE E BOLINHA */
+    .modal-overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-sheet {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 18px;
+      width: 100%;
+      max-width: 320px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .modal-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .canva-picker-container {
+      position: relative;
+      width: 100%;
+      height: 140px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: crosshair;
+      margin-bottom: 12px;
+      box-shadow: inset 0 0 0 1px var(--border);
+    }
+
+    #colorCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .canva-handle-circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 4px rgba(0,0,0,0.8), inset 0 0 2px rgba(0,0,0,0.5);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      background: #E5C378;
+    }
+
+    .hue-slider-wrapper {
+      margin-bottom: 12px;
+    }
+
+    .hue-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 14px;
+      border-radius: 7px;
+      outline: none;
+      background: linear-gradient(to right, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
+      cursor: pointer;
+    }
+
+    .hue-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #1e293b;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .color-preview-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .color-swatch-large {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .hex-input-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px 8px;
+    }
+
+    .hex-input-wrapper input {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.9rem;
+      width: 100%;
+      outline: none;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn-action-primary {
+      padding: 10px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-action-secondary {
+      padding: 10px;
+      border-radius: 10px;
+      background: var(--card-hover);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+
+    /* Toast */
+    .toast-popup {
+      position: absolute;
+      bottom: 74px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: rgba(15, 23, 42, 0.95);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 99;
+    }
+
+    .toast-popup.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .tutorial-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      line-height: 1.5;
+    }
+
+    .tutorial-step {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .step-number {
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .step-text {
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+  
+    /* EXACT VIDEO STYLING & LUXURY CARDS */
+    .cat-vertical-card {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background: #16181f;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s;
+    }
+
+    .cat-vertical-card:active {
+      transform: scale(0.97);
+      border-color: rgba(197, 168, 128, 0.5);
+    }
+
+    .cat-vertical-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .cat-vertical-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .cat-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 12px;
+      pointer-events: none;
+    }
+
+    .cat-card-top {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .cat-card-fav-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.85);
+      pointer-events: auto;
+      transition: transform 0.15s;
+    }
+
+    .cat-card-fav-btn:active {
+      transform: scale(0.88);
+      color: #e11d48;
+    }
+
+    .cat-card-bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .cat-card-title {
+      font-family: 'Montserrat', 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+      letter-spacing: -0.2px;
+    }
+
+    
+
+    /* Video Banner Hero Exact Match */
+    .hof-video-hero {
+      padding: 18px 4px 14px 4px;
+    }
+
+    .hof-flag-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .hof-sub-hero {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+
+    /* FULL BLEED DONA HERO COM GRADIENTE DARK SUAVE */
+    .luxury-dona-hero {
+      position: relative;
+      width: calc(100% + 28px);
+      margin-left: -14px;
+      margin-right: -14px;
+      margin-top: 0;
+      height: 380px;
+      overflow: hidden;
+      background: #271c21;
+    }
+
+    .luxury-dona-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+    }
+
+    .luxury-dona-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(39, 28, 33, 0) 0%, rgba(39, 28, 33, 0.2) 40%, rgba(39, 28, 33, 0.85) 85%, #271c21 100%);
+      pointer-events: none;
+    }
+
+    /* MODAL DE MENU TOTALMENTE DEDICADO E ISOLADO */
+    .user-menu-modal {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 9999;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+
+    .user-menu-content {
+      background: #161822;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 26px 26px 0 0;
+      padding: 22px 20px 36px 20px;
+      box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.75);
+      animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalSlideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .user-menu-btn {
+      width: 100%;
+      padding: 15px 16px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s;
+    }
+
+    .user-menu-btn:active {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .user-menu-btn.logout {
+      color: #ef4444;
+      border-color: rgba(239, 68, 68, 0.25);
+      background: rgba(239, 68, 68, 0.08);
+    }
+    
+</style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="phone-container">
+    <!-- Tela de Login Profissional com Proteção Extra -->
+    <div id="pwaLoginScreen" style="position: absolute; inset: 0; background: #271c21; z-index: 150; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 28px; text-align: center;">
+      <div style="width: 76px; height: 76px; border-radius: 20px; background: linear-gradient(135deg, rgba(197, 168, 128, 0.25), rgba(197, 168, 128, 0.05)); border: 1px solid rgba(197, 168, 128, 0.4); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c5a880" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+
+      <h2 style="font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 6px; letter-spacing: -0.5px;">Área de Membros HOF</h2>
+      <p style="font-size: 0.82rem; color: #9ca3af; margin-bottom: 28px; line-height: 1.4;">Digite o e-mail cadastrado na sua compra para liberar o aplicativo de figurinhas.</p>
+
+      <div style="width: 100%; margin-bottom: 14px; text-align: left;">
+        <label style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #c5a880; font-weight: 700; margin-bottom: 6px; display: block;">Seu E-mail:</label>
+        <input type="email" id="loginEmailInput" placeholder="exemplo@gmail.com" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); color: #ffffff; font-size: 0.95rem; outline: none;">
+      </div>
+
+      <div style="width: 100%; margin-bottom: 22px; text-align: left;">
+        <label style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #c5a880; font-weight: 700; margin-bottom: 6px; display: block;">Senha de Acesso:</label>
+        <input type="password" id="loginPasswordInput" placeholder="••••••••" style="width: 100%; padding: 14px 16px; border-radius: 12px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); color: #ffffff; font-size: 0.95rem; outline: none;">
+      </div>
+
+      <button id="btnLoginSubmit" onclick="handlePwaLogin()" style="width: 100%; padding: 15px; border-radius: 14px; background: linear-gradient(135deg, #c5a880, #a88a60); color: #000000; font-weight: 800; font-size: 0.95rem; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(197, 168, 128, 0.3);">
+        Acessar Figurinhas
+      </button>
+
+      <p id="loginFeedbackMsg" style="margin-top: 14px; font-size: 0.78rem; color: #ef4444; display: none;"></p>
+
+      <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); width: 100%;">
+        <span style="font-size: 0.72rem; color: #6b7280;">Proteção contra cópias ativada • SSL 256-bit</span>
+      </div>
+    </div>
+
+    <div class="phone-top-sensor"></div>
+
+    <div class="status-bar">
+      <span id="clockDisplay">12:58</span>
+      <div class="status-bar-icons">
+        <span>5G</span>
+        <span>85%</span>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="app-header-left">
+        <button class="header-btn" id="btnBackHeader" style="display: none;" onclick="goHome()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="app-title" id="appHeaderTitle" style="display: none;"></span>
+      </div>
+      <div></div>
+    </header>
+
+    <div id="searchBarWrapper" style="display: none; padding: 0 14px 8px;">
+      <input type="text" id="stickerFilterInput" placeholder="Buscar figurinha..." style="width: 100%; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text); outline: none; font-size: 0.85rem;">
+    </div>
+
+    <main class="app-body" id="appBody">
+      <!-- Home / Vitrine -->
+      <section id="viewHome">
+        <!-- Topo Dark com Gradiente Suave Esfumado -->
+        <div class="luxury-dona-hero">
+          <img src="/hero_livia_design.webp" alt="Dra Lyvia Vieira" class="luxury-dona-img">
+          <div class="luxury-dona-gradient"></div>
+        </div>
+
+        <div class="section-header" style="margin-top: 14px; margin-bottom: 12px;">
+          <h3 class="section-title" style="font-family: 'Montserrat', sans-serif; font-size: 1.05rem; letter-spacing: -0.3px; color: #ffffff;">Coleções de Figurinhas</h3>
+        </div>
+        <div class="categories-grid" id="homeCategoriesGrid"></div>
+      </section>
+
+      <!-- Grid de Figurinhas -->
+      <section id="viewCategory" style="display: none;">
+        <div class="pills-scroll" id="categoryPillsScroll"></div>
+        <div class="stickers-grid" id="categoryStickersGrid"></div>
+      </section>
+
+      <!-- Tutorial -->
+      <section id="viewTutorial" style="display: none;">
+        <div class="tutorial-container">
+          <h2 style="font-size: 1rem; margin-bottom: 12px; color: var(--accent);">Como usar nos Stories</h2>
+          
+          <div class="tutorial-step">
+            <div class="step-number">1</div>
+            <div class="step-text">Escolha sua categoria na vitrine.</div>
+          </div>
+          <div class="tutorial-step">
+            <div class="step-number">2</div>
+            <div class="step-text">Toque no ícone de <strong>lápis/pincel</strong> para escolher qualquer cor no gradiente Canva. Ao clicar para mudar, ela muda instantaneamente!</div>
+          </div>
+          <div class="tutorial-step">
+            <div class="step-number">3</div>
+            <div class="step-text">Toque na figurinha para <strong>copiar direto para a área de transferência</strong>.</div>
+          </div>
+          <div class="tutorial-step">
+            <div class="step-number">4</div>
+            <div class="step-text">Abra os <strong>Stories do Instagram</strong> e cole na sua foto ou vídeo!</div>
+          </div>
+        </div>
+      </section>
+    
+    
+    </main>
+
+    <!-- Modal Canva de Cor -->
+    <div class="modal-overlay" id="colorModal" onclick="closeColorModal(event)">
+      <div class="modal-sheet" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <h3 class="modal-title">Gradiente de Cores (Estilo Canva)</h3>
+          <button class="modal-close" onclick="closeColorModal()">&times;</button>
+        </div>
+
+        <div class="canva-picker-container" id="pickerContainer">
+          <canvas id="colorCanvas"></canvas>
+          <div class="canva-handle-circle" id="pickerHandle"></div>
+        </div>
+
+        <div class="hue-slider-wrapper">
+          <input type="range" class="hue-slider" id="hueRange" min="0" max="360" value="45" oninput="onHueSliderChange(this.value)">
+        </div>
+
+        <div class="color-preview-row">
+          <div class="color-swatch-large" id="modalColorSwatch" style="background-color: #E5C378;"></div>
+          <div class="hex-input-wrapper">
+            <span>#</span>
+            <input type="text" id="hexColorInput" value="E5C378" maxlength="6" oninput="onHexManualInput(this.value)">
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-action-primary" onclick="applyColorChoice(false)">Mudar apenas esta figurinha</button>
+          <button class="btn-action-secondary" onclick="applyColorChoice(true)">Mudar todas as figurinhas</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-popup" id="toastNotice">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+      <span id="toastText">Figurinha copiada!</span>
+    </div>
+
+    <!-- Barra Inferior -->
+    
+    <!-- Modal do Menu de Usuário (Isolado) -->
+    <div id="userMenuModal" class="user-menu-modal" onclick="if(event.target===this) toggleUserMenuModal()">
+      <div class="user-menu-content">
+        <div style="width: 36px; height: 4px; border-radius: 99px; background: rgba(255,255,255,0.25); margin: 0 auto 18px auto;"></div>
+        <h4 style="font-size: 1.05rem; color: #ffffff; margin-bottom: 18px; font-weight: 700; font-family: 'Montserrat', sans-serif;">Menu</h4>
+
+        <button class="user-menu-btn" onclick="toggleUserMenuModal(); openFavoritesView();">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c5a880" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          Minhas Figurinhas Favoritas
+        </button>
+
+        <button class="user-menu-btn" onclick="toggleUserMenuModal(); openTutorialView();">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Tutorial: Como Usar nos Stories
+        </button>
+
+        <button id="btnPwaInstallMenu" class="user-menu-btn" onclick="toggleUserMenuModal(); promptPwaInstall();">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Instalar App no Celular (PWA)
+        </button>
+        <button class="user-menu-btn logout" onclick="handleLogout()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          Sair da Conta
+        </button>
+      </div>
+    </div>
+    
+    <nav class="bottom-nav">
+      <button class="nav-item active" id="navVitrine" onclick="goHome()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Início</span>
+      </button>
+
+      <button class="nav-item" id="navFavoritos" onclick="openFavoritesView()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span>Favoritos</span>
+      </button>
+
+      <button class="nav-item" id="navTutorial" onclick="openTutorialView()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        <span>Tutorial</span>
+      </button>
+
+
+
+      <button class="nav-item" id="navMenu" onclick="toggleUserMenuModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <span>Menu</span>
+      </button>
+    </nav>
+  </div>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
+    let catalog = [];
+    let currentCategoryId = null;
+    let catFavorites = JSON.parse(localStorage.getItem('hof_cat_favorites') || '[]');
+    let favorites = JSON.parse(localStorage.getItem('hof_favorites') || '[]');
+    let customColors = JSON.parse(localStorage.getItem('hof_colors') || '{}');
+    let globalColor = localStorage.getItem('hof_global_color') || '#ffffff';
+    let selectedStickerForColor = null;
+
+    let svgCache = {};
+
+    let currentHue = 45;
+    let isDraggingHandle = false;
+
+    function updateClock() {
+      const now = new Date();
+      const hrs = String(now.getHours()).padStart(2, '0');
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('clockDisplay').textContent = `${hrs}:${mins}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    function toggleTheme() { /* Always Dark Mode */ }
+    if ('dark' === 'light') {
+      document.body.classList.add('light-mode');
+    }
+
+    async function initApp() {
+      try {
+        const res = await fetch('/catalog.json');
+        catalog = await res.json();
+        renderHomeCategories();
+      } catch (e) {
+        showToast('Erro ao carregar catálogo');
+      }
+    }
+
+    function renderHomeCategories() {
+      const grid = document.getElementById('homeCategoriesGrid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      catalog.forEach(cat => {
+        const card = document.createElement('div');
+        card.className = 'cat-vertical-card';
+        card.onclick = () => openCategory(cat.id);
+        
+        const count = (cat.stickers && cat.stickers.length) || 12;
+
+        card.innerHTML = `
+          <img src="${cat.cover_image}" alt="${cat.name}" loading="lazy">
+          <div class="cat-card-overlay">
+            <div class="cat-card-top">
+              <div class="cat-card-fav-btn ${catFavorites.includes(cat.id) ? 'active-heart' : ''}" onclick="toggleCatFav('${cat.id}', event)">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="${catFavorites.includes(cat.id) ? '#e11d48' : 'none'}" stroke="${catFavorites.includes(cat.id) ? '#e11d48' : 'currentColor'}" stroke-width="2.2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+            </div>
+            <div class="cat-card-bottom">
+              <span class="cat-card-title">${cat.name}</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function toggleCatFav(catId, e) {
+      if (e) e.stopPropagation();
+      const idx = catFavorites.indexOf(catId);
+      if (idx > -1) {
+        catFavorites.splice(idx, 1);
+        showToast('Removido dos favoritos');
+      } else {
+        catFavorites.push(catId);
+        showToast('Salvo nos favoritos!');
+      }
+      localStorage.setItem('hof_cat_favorites', JSON.stringify(catFavorites));
+      renderHomeCategories();
+    }
+
+    function goHome() {
+      document.getElementById('viewHome').style.display = 'block';
+      document.getElementById('viewCategory').style.display = 'none';
+      document.getElementById('viewTutorial').style.display = 'none';
+      document.getElementById('btnBackHeader').style.display = 'none';
+      document.getElementById('appHeaderTitle').style.display = 'none';
+      setActiveNav('navVitrine');
+    }
+
+    function openAllCategoriesList() {
+      if (catalog.length > 0) openCategory(catalog[0].id);
+    }
+
+    function openCategory(catId) {
+      currentCategoryId = catId;
+      const cat = catalog.find(c => c.id === catId);
+      if (!cat) return;
+
+      document.getElementById('viewHome').style.display = 'none';
+      document.getElementById('viewCategory').style.display = 'block';
+      document.getElementById('viewTutorial').style.display = 'none';
+      document.getElementById('btnBackHeader').style.display = 'flex';
+      document.getElementById('appHeaderTitle').textContent = cat.name;
+
+      renderPills();
+      renderCategoryStickers(cat);
+    }
+
+    function openTutorialView() {
+      document.getElementById('viewHome').style.display = 'none';
+      document.getElementById('viewCategory').style.display = 'none';
+      document.getElementById('viewTutorial').style.display = 'block';
+      document.getElementById('btnBackHeader').style.display = 'flex';
+      document.getElementById('appHeaderTitle').textContent = 'Tutorial de Uso';
+    }
+
+    function openFavoritesView() {
+      document.getElementById('viewHome').style.display = 'none';
+      document.getElementById('viewCategory').style.display = 'block';
+      document.getElementById('viewTutorial').style.display = 'none';
+      document.getElementById('btnBackHeader').style.display = 'flex';
+      const ht = document.getElementById('appHeaderTitle'); ht.textContent = 'Favoritos'; ht.style.display = 'block';
+      setActiveNav('navFavoritos');
+
+      const favStickers = [];
+      catalog.forEach(cat => {
+        cat.stickers.forEach(s => {
+          if (favorites.includes(s.id)) favStickers.push(s);
+        });
+      });
+
+      document.getElementById('categoryPillsScroll').innerHTML = '';
+      renderStickersGrid(favStickers, 'Nenhuma figurinha favoritada ainda.');
+    }
+
+    function openCommunityView() {
+      showToast('Acesso VIP liberado');
+      setActiveNav('navComunidade');
+    }
+
+    function setActiveNav(navId) {
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      const target = document.getElementById(navId);
+      if (target) target.classList.add('active');
+    }
+
+    function renderPills() {
+      const scroll = document.getElementById('categoryPillsScroll');
+      scroll.innerHTML = '';
+      catalog.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = `pill-btn ${c.id === currentCategoryId ? 'active' : ''}`;
+        btn.textContent = c.name;
+        btn.onclick = () => openCategory(c.id);
+        scroll.appendChild(btn);
+      });
+    }
+
+    function renderCategoryStickers(cat) {
+      renderStickersGrid(cat.stickers, 'Nenhuma figurinha nesta categoria.');
+    }
+
+    async function loadSvgContent(filename) {
+      if (svgCache[filename]) return svgCache[filename];
+      try {
+        const res = await fetch(`/stickers_clean/${filename}`);
+        const text = await res.text();
+        svgCache[filename] = text;
+        return text;
+      } catch (e) {
+        return '';
+      }
+    }
+
+    async function renderStickersGrid(stickers, emptyMsg) {
+      const grid = document.getElementById('categoryStickersGrid');
+      grid.innerHTML = '';
+
+      if (!stickers || stickers.length === 0) {
+        grid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px 0;">${emptyMsg}</p>`;
+        return;
+      }
+
+      for (const s of stickers) {
+        const isFav = favorites.includes(s.id);
+        const card = document.createElement('div');
+        card.className = 'sticker-card';
+        card.id = `card_${s.id}`;
+
+        const colorApplied = customColors[s.id] || globalColor || '#ffffff';
+
+        card.innerHTML = `
+          <div class="sticker-card-topbar">
+            <button class="card-icon-btn" onclick="openColorModal('${s.id}', event)" title="Editar cor (Canva)">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
+            </button>
+            <button class="card-icon-btn ${isFav ? 'active-heart' : ''}" onclick="toggleFavorite('${s.id}', event)" title="Favoritar">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="${isFav ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+          </div>
+          <div class="sticker-art-wrapper" id="art_${s.id}" style="color: ${colorApplied};">
+            <div style="font-size: 0.75rem; color: var(--text-muted);">Carregando...</div>
+          </div>
+        `;
+
+        card.onclick = () => copyStickerToClipboard(s.file, colorApplied);
+        grid.appendChild(card);
+
+        // Injeta o SVG inline para troca dinâmica instantânea de cor
+        loadSvgContent(s.file).then(rawSvg => {
+          const wrapper = document.getElementById(`art_${s.id}`);
+          if (wrapper && rawSvg) {
+            wrapper.innerHTML = rawSvg;
+            wrapper.style.color = customColors[s.id] || globalColor || '#ffffff';
+          }
+        });
+      }
+    }
+
+    async function copyStickerToClipboard(filename, colorHex) {
+      try {
+        const rawSvg = await loadSvgContent(filename);
+        if (!rawSvg) throw new Error('SVG not loaded');
+
+        // SVG transparente com a cor aplicada
+        let coloredSvg = rawSvg.replace(/fill="currentColor"/g, `fill="${colorHex}"`);
+        if (!coloredSvg.includes('fill=')) {
+          coloredSvg = coloredSvg.replace(/<svg([^>]*)>/, `<svg$1 fill="${colorHex}">`);
+        }
+
+        // WhatsApp e Instagram colam nativamente apenas 'image/png' no clipboard
+        // Renderizamos o SVG em alta resolução transparente no Canvas
+        const svgBlob = new Blob([coloredSvg], { type: 'image/svg+xml;charset=utf-8' });
+        const URL = window.URL || window.webkitURL || window;
+        const blobURL = URL.createObjectURL(svgBlob);
+
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        
+        await new Promise((resolve, reject) => {
+          img.onload = resolve;
+          img.onerror = reject;
+          img.src = blobURL;
+        });
+
+        const canvas = document.createElement('canvas');
+        const scale = 2; // Alta resolução (retina) para nitidez total no WhatsApp
+        canvas.width = (img.width || 512) * scale;
+        canvas.height = (img.height || 512) * scale;
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        URL.revokeObjectURL(blobURL);
+
+        const pngBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+
+        if (navigator.clipboard && window.ClipboardItem) {
+          try {
+            const item = new ClipboardItem({ 'image/png': pngBlob });
+            await navigator.clipboard.write([item]);
+            showToast('Imagem copiada');
+            return;
+          } catch (clipErr) {
+            console.warn('Clipboard write failed, trying fallback download/share', clipErr);
+          }
+        }
+
+        // Web Share API para celulares onde navigator.clipboard é bloqueado
+        if (navigator.canShare && navigator.canShare({ files: [new File([pngBlob], 'figurinha.png', { type: 'image/png' })] })) {
+          const file = new File([pngBlob], 'figurinha.png', { type: 'image/png' });
+          await navigator.share({
+            files: [file],
+            title: 'Figurinha HOF'
+          });
+          showToast('Enviado!');
+          return;
+        }
+
+        // Fallback para download do PNG transparente
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(pngBlob);
+        a.download = `figurinha-hof-${colorHex.replace('#','')}.png`;
+        a.click();
+        showToast('Imagem copiada');
+      } catch (err) {
+        console.error(err);
+        showToast('Erro ao copiar figurinha');
+      }
+    }
+
+    function toggleFavorite(id, e) {
+      e.stopPropagation();
+      const idx = favorites.indexOf(id);
+      if (idx > -1) {
+        favorites.splice(idx, 1);
+        showToast('Removido dos favoritos');
+      } else {
+        favorites.push(id);
+        showToast('Salvo nos favoritos!');
+      }
+      localStorage.setItem('hof_favorites', JSON.stringify(favorites));
+
+      const cat = catalog.find(c => c.id === currentCategoryId);
+      if (cat) renderCategoryStickers(cat);
+      else if (document.getElementById('appHeaderTitle').textContent === 'Favoritos') openFavoritesView();
+    }
+
+    // ==========================================
+    // CANVA COLOR PICKER COM GRADIENTE E BOLINHA
+    // ==========================================
+    const canvas = document.getElementById('colorCanvas');
+    const ctx = canvas.getContext('2d');
+    const pickerContainer = document.getElementById('pickerContainer');
+    const pickerHandle = document.getElementById('pickerHandle');
+
+    function drawCanvaGradient() {
+      const w = pickerContainer.clientWidth || 280;
+      const h = pickerContainer.clientHeight || 140;
+      canvas.width = w;
+      canvas.height = h;
+
+      ctx.fillStyle = `hsl(${currentHue}, 100%, 50%)`;
+      ctx.fillRect(0, 0, w, h);
+
+      const whiteGrad = ctx.createLinearGradient(0, 0, w, 0);
+      whiteGrad.addColorStop(0, 'rgba(255,255,255,1)');
+      whiteGrad.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = whiteGrad;
+      ctx.fillRect(0, 0, w, h);
+
+      const blackGrad = ctx.createLinearGradient(0, 0, 0, h);
+      blackGrad.addColorStop(0, 'rgba(0,0,0,0)');
+      blackGrad.addColorStop(1, 'rgba(0,0,0,1)');
+      ctx.fillStyle = blackGrad;
+      ctx.fillRect(0, 0, w, h);
+    }
+
+    function updateCanvaColorFromPosition(x, y) {
+      const w = canvas.width;
+      const h = canvas.height;
+      x = Math.max(0, Math.min(w, x));
+      y = Math.max(0, Math.min(h, y));
+
+      pickerHandle.style.left = `${x}px`;
+      pickerHandle.style.top = `${y}px`;
+
+      const pixel = ctx.getImageData(x === w ? w - 1 : x, y === h ? h - 1 : y, 1, 1).data;
+      const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+      
+      document.getElementById('modalColorSwatch').style.backgroundColor = hex;
+      pickerHandle.style.backgroundColor = hex;
+      document.getElementById('hexColorInput').value = hex.replace('#', '').toUpperCase();
+    }
+
+    function rgbToHex(r, g, b) {
+      return '#' + [r, g, b].map(x => {
+        const h = x.toString(16);
+        return h.length === 1 ? '0' + h : h;
+      }).join('');
+    }
+
+    function onHueSliderChange(val) {
+      currentHue = val;
+      drawCanvaGradient();
+      const rect = pickerContainer.getBoundingClientRect();
+      const hx = parseFloat(pickerHandle.style.left) || (rect.width / 2);
+      const hy = parseFloat(pickerHandle.style.top) || (rect.height / 2);
+      updateCanvaColorFromPosition(hx, hy);
+    }
+
+    function onHexManualInput(val) {
+      if (val.length === 6) {
+        const hex = '#' + val;
+        document.getElementById('modalColorSwatch').style.backgroundColor = hex;
+        pickerHandle.style.backgroundColor = hex;
+      }
+    }
+
+    pickerContainer.addEventListener('mousedown', (e) => {
+      isDraggingHandle = true;
+      const rect = pickerContainer.getBoundingClientRect();
+      updateCanvaColorFromPosition(e.clientX - rect.left, e.clientY - rect.top);
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDraggingHandle) return;
+      const rect = pickerContainer.getBoundingClientRect();
+      updateCanvaColorFromPosition(e.clientX - rect.left, e.clientY - rect.top);
+    });
+
+    window.addEventListener('mouseup', () => { isDraggingHandle = false; });
+
+    pickerContainer.addEventListener('touchstart', (e) => {
+      isDraggingHandle = true;
+      const t = e.touches[0];
+      const rect = pickerContainer.getBoundingClientRect();
+      updateCanvaColorFromPosition(t.clientX - rect.left, t.clientY - rect.top);
+    }, { passive: true });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDraggingHandle) return;
+      const t = e.touches[0];
+      const rect = pickerContainer.getBoundingClientRect();
+      updateCanvaColorFromPosition(t.clientX - rect.left, t.clientY - rect.top);
+    }, { passive: true });
+
+    window.addEventListener('touchend', () => { isDraggingHandle = false; });
+
+    function openColorModal(stickerId, e) {
+      e.stopPropagation();
+      selectedStickerForColor = stickerId;
+      document.getElementById('colorModal').classList.add('active');
+      setTimeout(() => {
+        drawCanvaGradient();
+        const hex = customColors[stickerId] || globalColor || '#E5C378';
+        document.getElementById('modalColorSwatch').style.backgroundColor = hex;
+        document.getElementById('hexColorInput').value = hex.replace('#', '').toUpperCase();
+        pickerHandle.style.backgroundColor = hex;
+      }, 50);
+    }
+
+    function closeColorModal(e) {
+      if (!e || e.target.id === 'colorModal') {
+        document.getElementById('colorModal').classList.remove('active');
+      }
+    }
+
+    function applyColorChoice(applyToAll) {
+      const hex = '#' + document.getElementById('hexColorInput').value;
+      if (applyToAll) {
+        globalColor = hex;
+        localStorage.setItem('hof_global_color', hex);
+        showToast(`Cor ${hex} aplicada a todas as figurinhas.`);
+        // Altera instantaneamente a cor de todos os SVGs na tela
+        document.querySelectorAll('.sticker-art-wrapper').forEach(el => {
+          el.style.color = hex;
+        });
+      } else {
+        customColors[selectedStickerForColor] = hex;
+        localStorage.setItem('hof_colors', JSON.stringify(customColors));
+        showToast(`Cor ${hex} aplicada nesta figurinha.`);
+        // Altera instantaneamente a cor desta figurinha específica
+        const el = document.getElementById(`art_${selectedStickerForColor}`);
+        if (el) el.style.color = hex;
+      }
+      closeColorModal();
+    }
+
+    function toggleSearch() {
+      const wrap = document.getElementById('searchBarWrapper');
+      wrap.style.display = wrap.style.display === 'none' ? 'block' : 'none';
+      if (wrap.style.display === 'block') document.getElementById('stickerFilterInput').focus();
+    }
+
+    document.getElementById('stickerFilterInput').addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      const cat = catalog.find(c => c.id === currentCategoryId);
+      if (!cat) return;
+      const filtered = cat.stickers.filter(s => s.file.toLowerCase().includes(term));
+      renderStickersGrid(filtered, 'Nenhuma figurinha encontrada para o termo.');
+    });
+
+    let toastTimeout;
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotice');
+      document.getElementById('toastText').textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    
+    // Validação de Acesso PWA com Supabase
+    async function handlePwaLogin() {
+      const email = document.getElementById('loginEmailInput').value.trim().toLowerCase();
+      const pwd = document.getElementById('loginPasswordInput').value.trim();
+      const feedback = document.getElementById('loginFeedbackMsg');
+      const btn = document.getElementById('btnLoginSubmit');
+
+      if (!email) {
+        feedback.textContent = 'Por favor, digite seu e-mail de compra.';
+        feedback.style.display = 'block';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Verificando acesso...';
+      feedback.style.display = 'none';
+
+      try {
+        const res = await fetch(`https://ogillmpewogoynuaxmvk.supabase.co/rest/v1/app_members?email=eq.${encodeURIComponent(email)}&status=eq.active&select=*`, {
+          headers: {
+            'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9naWxsbXBld29nb3ludWF4bXZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0Njc0NTksImV4cCI6MjEwOTA0MzQ1OX0.9_CT5_UsN8Wu6hBNKl1Gc9VcQ3t6Z5hJTpszk_Z-2HU',
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9naWxsbXBld29nb3ludWF4bXZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0Njc0NTksImV4cCI6MjEwOTA0MzQ1OX0.9_CT5_UsN8Wu6hBNKl1Gc9VcQ3t6Z5hJTpszk_Z-2HU'
+          }
+        });
+        const members = await res.json();
+        
+        if (members && members.length > 0) {
+          localStorage.setItem('hof_pwa_authenticated_user', email);
+          document.getElementById('pwaLoginScreen').style.display = 'none';
+          showToast(`Bem-vinda(o), ${members[0].name || 'Membro'}!`);
+        } else {
+          feedback.textContent = 'E-mail não autorizado. Adquira seu acesso na página oficial.';
+          feedback.style.display = 'block';
+        }
+      } catch (err) {
+        feedback.textContent = 'Erro ao conectar. Tente novamente.';
+        feedback.style.display = 'block';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Acessar Figurinhas';
+      }
+    }
+
+    // Auto-login se já tiver sessão salva no celular
+    const savedSession = localStorage.getItem('hof_pwa_authenticated_user');
+    if (savedSession) {
+      document.getElementById('pwaLoginScreen').style.display = 'none';
+    }
+
+    
+    function toggleUserMenuModal() {
+      const modal = document.getElementById('userMenuModal');
+      if (!modal) return;
+      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('hof_pwa_authenticated_user');
+      toggleUserMenuModal();
+      const loginScreen = document.getElementById('pwaLoginScreen');
+      if (loginScreen) {
+        loginScreen.style.display = 'flex';
+      }
+      showToast('Sessão encerrada com sucesso');
+    }
+    
+    
+    // Suporte a Instalação Automática PWA
+    let deferredPrompt = null;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const installBtn = document.getElementById('btnPwaInstall');
+      if (installBtn) installBtn.style.display = 'flex';
+    });
+
+    async function promptPwaInstall() {
+      if (!deferredPrompt) {
+        showToast('Para instalar: toque em Compartilhar e depois em "Adicionar à Tela de Início"');
+        return;
+      }
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        showToast('App instalado com sucesso!');
+      }
+      deferredPrompt = null;
+      const installBtn = document.getElementById('btnPwaInstall');
+      if (installBtn) installBtn.style.display = 'none';
+    }
+
+    window.addEventListener('appinstalled', () => {
+      showToast('HOF Stories instalado!');
+    });
+
+    initApp();
+  </script>
+</body>
+</html>

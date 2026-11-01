@@ -1,0 +1,41 @@
+{
+  "name": "HOF Stories Criativos",
+  "short_name": "HOF Stories",
+  "description": "App Oficial de Figurinhas Estratégicas para Harmonização Orofacial",
+  "start_url": "/app_pwa.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#271c21",
+  "theme_color": "#271c21",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["beauty", "lifestyle", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Favoritos",
+      "short_name": "Favoritos",
+      "description": "Acessar figurinhas favoritas",
+      "url": "/app_pwa.html#favoritos",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

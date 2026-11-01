@@ -1,0 +1,1529 @@
+[
+  {
+    "id": "cat_01",
+    "name": "Planejamento Facial Resultado",
+    "cover_image": "/HOF_Stories_37/01_planejamento_facial_resultado.png",
+    "stickers": [
+      {
+        "id": "stk_ponto_mira_simples",
+        "file": "stk_ponto_mira_simples.svg"
+      },
+      {
+        "id": "stk_marcador_guia_direita",
+        "file": "stk_marcador_guia_direita.svg"
+      },
+      {
+        "id": "stk_marcador_guia_esquerda",
+        "file": "stk_marcador_guia_esquerda.svg"
+      },
+      {
+        "id": "stk_arco_mandibular_vetor",
+        "file": "stk_arco_mandibular_vetor.svg"
+      },
+      {
+        "id": "stk_lifting_setas_tracao",
+        "file": "stk_lifting_setas_tracao.svg"
+      },
+      {
+        "id": "stk_pontos_toxina_glabela",
+        "file": "stk_pontos_toxina_glabela.svg"
+      },
+      {
+        "id": "stk_arco_labial_proporcao",
+        "file": "stk_arco_labial_proporcao.svg"
+      },
+      {
+        "id": "stk_moldura_antes_depois_elegante",
+        "file": "stk_moldura_antes_depois_elegante.svg"
+      },
+      {
+        "id": "stk_selo_antes_depois_slider",
+        "file": "stk_selo_antes_depois_slider.svg"
+      },
+      {
+        "id": "stk_badge_procedimento_realizado",
+        "file": "stk_badge_procedimento_realizado.svg"
+      },
+      {
+        "id": "stk_frase_resina_camadas",
+        "file": "stk_frase_resina_camadas.svg"
+      },
+      {
+        "id": "stk_frase_naturalidade_harmonia",
+        "file": "stk_frase_naturalidade_harmonia.svg"
+      },
+      {
+        "id": "stk_1",
+        "file": "stk_1.svg"
+      },
+      {
+        "id": "stk_10",
+        "file": "stk_10.svg"
+      },
+      {
+        "id": "stk_100",
+        "file": "stk_100.svg"
+      },
+      {
+        "id": "stk_101",
+        "file": "stk_101.svg"
+      },
+      {
+        "id": "stk_102",
+        "file": "stk_102.svg"
+      },
+      {
+        "id": "stk_103",
+        "file": "stk_103.svg"
+      },
+      {
+        "id": "stk_104",
+        "file": "stk_104.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_02",
+    "name": "Analise Facial",
+    "cover_image": "/HOF_Stories_37/02_analise_facial.png",
+    "stickers": [
+      {
+        "id": "stk_ponto_mira_simples",
+        "file": "stk_ponto_mira_simples.svg"
+      },
+      {
+        "id": "stk_marcador_guia_direita",
+        "file": "stk_marcador_guia_direita.svg"
+      },
+      {
+        "id": "stk_marcador_guia_esquerda",
+        "file": "stk_marcador_guia_esquerda.svg"
+      },
+      {
+        "id": "stk_arco_mandibular_vetor",
+        "file": "stk_arco_mandibular_vetor.svg"
+      },
+      {
+        "id": "stk_lifting_setas_tracao",
+        "file": "stk_lifting_setas_tracao.svg"
+      },
+      {
+        "id": "stk_pontos_toxina_glabela",
+        "file": "stk_pontos_toxina_glabela.svg"
+      },
+      {
+        "id": "stk_arco_labial_proporcao",
+        "file": "stk_arco_labial_proporcao.svg"
+      },
+      {
+        "id": "stk_moldura_antes_depois_elegante",
+        "file": "stk_moldura_antes_depois_elegante.svg"
+      },
+      {
+        "id": "stk_selo_antes_depois_slider",
+        "file": "stk_selo_antes_depois_slider.svg"
+      },
+      {
+        "id": "stk_badge_procedimento_realizado",
+        "file": "stk_badge_procedimento_realizado.svg"
+      },
+      {
+        "id": "stk_frase_resina_camadas",
+        "file": "stk_frase_resina_camadas.svg"
+      },
+      {
+        "id": "stk_frase_naturalidade_harmonia",
+        "file": "stk_frase_naturalidade_harmonia.svg"
+      },
+      {
+        "id": "stk_105",
+        "file": "stk_105.svg"
+      },
+      {
+        "id": "stk_106",
+        "file": "stk_106.svg"
+      },
+      {
+        "id": "stk_107",
+        "file": "stk_107.svg"
+      },
+      {
+        "id": "stk_108",
+        "file": "stk_108.svg"
+      },
+      {
+        "id": "stk_109",
+        "file": "stk_109.svg"
+      },
+      {
+        "id": "stk_11",
+        "file": "stk_11.svg"
+      },
+      {
+        "id": "stk_110",
+        "file": "stk_110.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_03",
+    "name": "Linhas Marcas Vetores",
+    "cover_image": "/HOF_Stories_37/03_linhas_marcas_vetores.png",
+    "stickers": [
+      {
+        "id": "stk_ponto_mira_simples",
+        "file": "stk_ponto_mira_simples.svg"
+      },
+      {
+        "id": "stk_marcador_guia_direita",
+        "file": "stk_marcador_guia_direita.svg"
+      },
+      {
+        "id": "stk_marcador_guia_esquerda",
+        "file": "stk_marcador_guia_esquerda.svg"
+      },
+      {
+        "id": "stk_arco_mandibular_vetor",
+        "file": "stk_arco_mandibular_vetor.svg"
+      },
+      {
+        "id": "stk_lifting_setas_tracao",
+        "file": "stk_lifting_setas_tracao.svg"
+      },
+      {
+        "id": "stk_pontos_toxina_glabela",
+        "file": "stk_pontos_toxina_glabela.svg"
+      },
+      {
+        "id": "stk_arco_labial_proporcao",
+        "file": "stk_arco_labial_proporcao.svg"
+      },
+      {
+        "id": "stk_moldura_antes_depois_elegante",
+        "file": "stk_moldura_antes_depois_elegante.svg"
+      },
+      {
+        "id": "stk_selo_antes_depois_slider",
+        "file": "stk_selo_antes_depois_slider.svg"
+      },
+      {
+        "id": "stk_badge_procedimento_realizado",
+        "file": "stk_badge_procedimento_realizado.svg"
+      },
+      {
+        "id": "stk_frase_resina_camadas",
+        "file": "stk_frase_resina_camadas.svg"
+      },
+      {
+        "id": "stk_frase_naturalidade_harmonia",
+        "file": "stk_frase_naturalidade_harmonia.svg"
+      },
+      {
+        "id": "stk_111",
+        "file": "stk_111.svg"
+      },
+      {
+        "id": "stk_112",
+        "file": "stk_112.svg"
+      },
+      {
+        "id": "stk_113",
+        "file": "stk_113.svg"
+      },
+      {
+        "id": "stk_114",
+        "file": "stk_114.svg"
+      },
+      {
+        "id": "stk_115",
+        "file": "stk_115.svg"
+      },
+      {
+        "id": "stk_116",
+        "file": "stk_116.svg"
+      },
+      {
+        "id": "stk_117",
+        "file": "stk_117.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_04",
+    "name": "Experiencia Cliente",
+    "cover_image": "/HOF_Stories_37/04_experiencia_cliente.png",
+    "stickers": [
+      {
+        "id": "stk_118",
+        "file": "stk_118.svg"
+      },
+      {
+        "id": "stk_119",
+        "file": "stk_119.svg"
+      },
+      {
+        "id": "stk_12",
+        "file": "stk_12.svg"
+      },
+      {
+        "id": "stk_120",
+        "file": "stk_120.svg"
+      },
+      {
+        "id": "stk_121",
+        "file": "stk_121.svg"
+      },
+      {
+        "id": "stk_122",
+        "file": "stk_122.svg"
+      },
+      {
+        "id": "stk_123",
+        "file": "stk_123.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_05",
+    "name": "Pele Skincare",
+    "cover_image": "/HOF_Stories_37/05_pele_skincare.png",
+    "stickers": [
+      {
+        "id": "stk_124",
+        "file": "stk_124.svg"
+      },
+      {
+        "id": "stk_125",
+        "file": "stk_125.svg"
+      },
+      {
+        "id": "stk_126",
+        "file": "stk_126.svg"
+      },
+      {
+        "id": "stk_127",
+        "file": "stk_127.svg"
+      },
+      {
+        "id": "stk_128",
+        "file": "stk_128.svg"
+      },
+      {
+        "id": "stk_129",
+        "file": "stk_129.svg"
+      },
+      {
+        "id": "stk_13",
+        "file": "stk_13.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_06",
+    "name": "Procedimentos Antes Depois",
+    "cover_image": "/HOF_Stories_37/06_perfiloplastia.png",
+    "stickers": [
+      {
+        "id": "stk_ponto_mira_simples",
+        "file": "stk_ponto_mira_simples.svg"
+      },
+      {
+        "id": "stk_marcador_guia_direita",
+        "file": "stk_marcador_guia_direita.svg"
+      },
+      {
+        "id": "stk_marcador_guia_esquerda",
+        "file": "stk_marcador_guia_esquerda.svg"
+      },
+      {
+        "id": "stk_arco_mandibular_vetor",
+        "file": "stk_arco_mandibular_vetor.svg"
+      },
+      {
+        "id": "stk_lifting_setas_tracao",
+        "file": "stk_lifting_setas_tracao.svg"
+      },
+      {
+        "id": "stk_pontos_toxina_glabela",
+        "file": "stk_pontos_toxina_glabela.svg"
+      },
+      {
+        "id": "stk_arco_labial_proporcao",
+        "file": "stk_arco_labial_proporcao.svg"
+      },
+      {
+        "id": "stk_moldura_antes_depois_elegante",
+        "file": "stk_moldura_antes_depois_elegante.svg"
+      },
+      {
+        "id": "stk_selo_antes_depois_slider",
+        "file": "stk_selo_antes_depois_slider.svg"
+      },
+      {
+        "id": "stk_badge_procedimento_realizado",
+        "file": "stk_badge_procedimento_realizado.svg"
+      },
+      {
+        "id": "stk_frase_resina_camadas",
+        "file": "stk_frase_resina_camadas.svg"
+      },
+      {
+        "id": "stk_frase_naturalidade_harmonia",
+        "file": "stk_frase_naturalidade_harmonia.svg"
+      },
+      {
+        "id": "stk_130",
+        "file": "stk_130.svg"
+      },
+      {
+        "id": "stk_131",
+        "file": "stk_131.svg"
+      },
+      {
+        "id": "stk_132",
+        "file": "stk_132.svg"
+      },
+      {
+        "id": "stk_133",
+        "file": "stk_133.svg"
+      },
+      {
+        "id": "stk_134",
+        "file": "stk_134.svg"
+      },
+      {
+        "id": "stk_135",
+        "file": "stk_135.svg"
+      },
+      {
+        "id": "stk_136",
+        "file": "stk_136.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_07",
+    "name": "Frases Impacto HOF",
+    "cover_image": "/HOF_Stories_37/07_atendimento_bastidores.png",
+    "stickers": [
+      {
+        "id": "stk_137",
+        "file": "stk_137.svg"
+      },
+      {
+        "id": "stk_138",
+        "file": "stk_138.svg"
+      },
+      {
+        "id": "stk_139",
+        "file": "stk_139.svg"
+      },
+      {
+        "id": "stk_140",
+        "file": "stk_140.svg"
+      },
+      {
+        "id": "stk_141",
+        "file": "stk_141.svg"
+      },
+      {
+        "id": "stk_142",
+        "file": "stk_142.svg"
+      },
+      {
+        "id": "stk_143",
+        "file": "stk_143.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_08",
+    "name": "Estetica Labial",
+    "cover_image": "/HOF_Stories_37/08_odontologia.png",
+    "stickers": [
+      {
+        "id": "stk_144",
+        "file": "stk_144.svg"
+      },
+      {
+        "id": "stk_145",
+        "file": "stk_145.svg"
+      },
+      {
+        "id": "stk_146",
+        "file": "stk_146.svg"
+      },
+      {
+        "id": "stk_147",
+        "file": "stk_147.svg"
+      },
+      {
+        "id": "stk_148",
+        "file": "stk_148.svg"
+      },
+      {
+        "id": "stk_149",
+        "file": "stk_149.svg"
+      },
+      {
+        "id": "stk_14_1",
+        "file": "stk_14_1.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_09",
+    "name": "Bioestimuladores",
+    "cover_image": "/HOF_Stories_37/09_preenchimento_labial.png",
+    "stickers": [
+      {
+        "id": "stk_14_2",
+        "file": "stk_14_2.svg"
+      },
+      {
+        "id": "stk_14_3",
+        "file": "stk_14_3.svg"
+      },
+      {
+        "id": "stk_14_4",
+        "file": "stk_14_4.svg"
+      },
+      {
+        "id": "stk_14_5",
+        "file": "stk_14_5.svg"
+      },
+      {
+        "id": "stk_14_6",
+        "file": "stk_14_6.svg"
+      },
+      {
+        "id": "stk_15",
+        "file": "stk_15.svg"
+      },
+      {
+        "id": "stk_150",
+        "file": "stk_150.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_10",
+    "name": "Toxina Botulinica",
+    "cover_image": "/HOF_Stories_37/10_intercorrencia.png",
+    "stickers": [
+      {
+        "id": "stk_151",
+        "file": "stk_151.svg"
+      },
+      {
+        "id": "stk_152",
+        "file": "stk_152.svg"
+      },
+      {
+        "id": "stk_153",
+        "file": "stk_153.svg"
+      },
+      {
+        "id": "stk_154",
+        "file": "stk_154.svg"
+      },
+      {
+        "id": "stk_155",
+        "file": "stk_155.svg"
+      },
+      {
+        "id": "stk_156",
+        "file": "stk_156.svg"
+      },
+      {
+        "id": "stk_157",
+        "file": "stk_157.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_11",
+    "name": "Harmonizacao Masculina",
+    "cover_image": "/HOF_Stories_37/11_preparar_fim_de_ano.png",
+    "stickers": [
+      {
+        "id": "stk_158",
+        "file": "stk_158.svg"
+      },
+      {
+        "id": "stk_159",
+        "file": "stk_159.svg"
+      },
+      {
+        "id": "stk_16",
+        "file": "stk_16.svg"
+      },
+      {
+        "id": "stk_160",
+        "file": "stk_160.svg"
+      },
+      {
+        "id": "stk_161",
+        "file": "stk_161.svg"
+      },
+      {
+        "id": "stk_162",
+        "file": "stk_162.svg"
+      },
+      {
+        "id": "stk_163",
+        "file": "stk_163.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_12",
+    "name": "Rinomodelacao",
+    "cover_image": "/HOF_Stories_37/12_estetica_regenerativa.png",
+    "stickers": [
+      {
+        "id": "stk_164",
+        "file": "stk_164.svg"
+      },
+      {
+        "id": "stk_165",
+        "file": "stk_165.svg"
+      },
+      {
+        "id": "stk_166",
+        "file": "stk_166.svg"
+      },
+      {
+        "id": "stk_167",
+        "file": "stk_167.svg"
+      },
+      {
+        "id": "stk_168",
+        "file": "stk_168.svg"
+      },
+      {
+        "id": "stk_169",
+        "file": "stk_169.svg"
+      },
+      {
+        "id": "stk_17",
+        "file": "stk_17.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_13",
+    "name": "Fios de Sustentacao",
+    "cover_image": "/HOF_Stories_37/13_toxina_botulinica.png",
+    "stickers": [
+      {
+        "id": "stk_170",
+        "file": "stk_170.svg"
+      },
+      {
+        "id": "stk_171",
+        "file": "stk_171.svg"
+      },
+      {
+        "id": "stk_172",
+        "file": "stk_172.svg"
+      },
+      {
+        "id": "stk_173",
+        "file": "stk_173.svg"
+      },
+      {
+        "id": "stk_174",
+        "file": "stk_174.svg"
+      },
+      {
+        "id": "stk_175",
+        "file": "stk_175.svg"
+      },
+      {
+        "id": "stk_176",
+        "file": "stk_176.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_14",
+    "name": "Preenchimento Mandibular",
+    "cover_image": "/HOF_Stories_37/14_tecnologias.png",
+    "stickers": [
+      {
+        "id": "stk_177",
+        "file": "stk_177.svg"
+      },
+      {
+        "id": "stk_178",
+        "file": "stk_178.svg"
+      },
+      {
+        "id": "stk_179",
+        "file": "stk_179.svg"
+      },
+      {
+        "id": "stk_18",
+        "file": "stk_18.svg"
+      },
+      {
+        "id": "stk_180",
+        "file": "stk_180.svg"
+      },
+      {
+        "id": "stk_181",
+        "file": "stk_181.svg"
+      },
+      {
+        "id": "stk_182",
+        "file": "stk_182.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_15",
+    "name": "Preenchimento Malar",
+    "cover_image": "/HOF_Stories_37/15_feedback_resultados.png",
+    "stickers": [
+      {
+        "id": "stk_183",
+        "file": "stk_183.svg"
+      },
+      {
+        "id": "stk_184",
+        "file": "stk_184.svg"
+      },
+      {
+        "id": "stk_185",
+        "file": "stk_185.svg"
+      },
+      {
+        "id": "stk_186",
+        "file": "stk_186.svg"
+      },
+      {
+        "id": "stk_187_1",
+        "file": "stk_187_1.svg"
+      },
+      {
+        "id": "stk_187_2",
+        "file": "stk_187_2.svg"
+      },
+      {
+        "id": "stk_187_3",
+        "file": "stk_187_3.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_16",
+    "name": "Olheiras",
+    "cover_image": "/HOF_Stories_37/16_harmonizacao_gluteos.png",
+    "stickers": [
+      {
+        "id": "stk_187_4",
+        "file": "stk_187_4.svg"
+      },
+      {
+        "id": "stk_187_6",
+        "file": "stk_187_6.svg"
+      },
+      {
+        "id": "stk_188_1",
+        "file": "stk_188_1.svg"
+      },
+      {
+        "id": "stk_188_2",
+        "file": "stk_188_2.svg"
+      },
+      {
+        "id": "stk_188_3",
+        "file": "stk_188_3.svg"
+      },
+      {
+        "id": "stk_188_4",
+        "file": "stk_188_4.svg"
+      },
+      {
+        "id": "stk_188_5",
+        "file": "stk_188_5.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_17",
+    "name": "Lifting Temporal",
+    "cover_image": "/HOF_Stories_37/17_envelhecimento_naturalidade.png",
+    "stickers": [
+      {
+        "id": "stk_188_6",
+        "file": "stk_188_6.svg"
+      },
+      {
+        "id": "stk_189_1",
+        "file": "stk_189_1.svg"
+      },
+      {
+        "id": "stk_189_2",
+        "file": "stk_189_2.svg"
+      },
+      {
+        "id": "stk_189_3",
+        "file": "stk_189_3.svg"
+      },
+      {
+        "id": "stk_189_4",
+        "file": "stk_189_4.svg"
+      },
+      {
+        "id": "stk_189_5",
+        "file": "stk_189_5.svg"
+      },
+      {
+        "id": "stk_189_6",
+        "file": "stk_189_6.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_18",
+    "name": "Glabela Linhas",
+    "cover_image": "/HOF_Stories_37/18_outubro_rosa.png",
+    "stickers": [
+      {
+        "id": "stk_19",
+        "file": "stk_19.svg"
+      },
+      {
+        "id": "stk_191_1",
+        "file": "stk_191_1.svg"
+      },
+      {
+        "id": "stk_191_2",
+        "file": "stk_191_2.svg"
+      },
+      {
+        "id": "stk_191_3",
+        "file": "stk_191_3.svg"
+      },
+      {
+        "id": "stk_191_4",
+        "file": "stk_191_4.svg"
+      },
+      {
+        "id": "stk_191_5",
+        "file": "stk_191_5.svg"
+      },
+      {
+        "id": "stk_191_6",
+        "file": "stk_191_6.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_19",
+    "name": "Pos Procedimento Cuidados",
+    "cover_image": "/HOF_Stories_37/19_k_beauty.png",
+    "stickers": [
+      {
+        "id": "stk_192",
+        "file": "stk_192.svg"
+      },
+      {
+        "id": "stk_193",
+        "file": "stk_193.svg"
+      },
+      {
+        "id": "stk_194",
+        "file": "stk_194.svg"
+      },
+      {
+        "id": "stk_2",
+        "file": "stk_2.svg"
+      },
+      {
+        "id": "stk_20",
+        "file": "stk_20.svg"
+      },
+      {
+        "id": "stk_21",
+        "file": "stk_21.svg"
+      },
+      {
+        "id": "stk_22",
+        "file": "stk_22.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_20",
+    "name": "Consultorio Rotina",
+    "cover_image": "/HOF_Stories_37/20_rinomodelacao.png",
+    "stickers": [
+      {
+        "id": "stk_23",
+        "file": "stk_23.svg"
+      },
+      {
+        "id": "stk_24",
+        "file": "stk_24.svg"
+      },
+      {
+        "id": "stk_25",
+        "file": "stk_25.svg"
+      },
+      {
+        "id": "stk_26",
+        "file": "stk_26.svg"
+      },
+      {
+        "id": "stk_27",
+        "file": "stk_27.svg"
+      },
+      {
+        "id": "stk_28",
+        "file": "stk_28.svg"
+      },
+      {
+        "id": "stk_29",
+        "file": "stk_29.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_21",
+    "name": "Agendamentos Avisos",
+    "cover_image": "/HOF_Stories_37/21_preenchimento_facial.png",
+    "stickers": [
+      {
+        "id": "stk_3",
+        "file": "stk_3.svg"
+      },
+      {
+        "id": "stk_30",
+        "file": "stk_30.svg"
+      },
+      {
+        "id": "stk_31",
+        "file": "stk_31.svg"
+      },
+      {
+        "id": "stk_32",
+        "file": "stk_32.svg"
+      },
+      {
+        "id": "stk_33",
+        "file": "stk_33.svg"
+      },
+      {
+        "id": "stk_34",
+        "file": "stk_34.svg"
+      },
+      {
+        "id": "stk_35",
+        "file": "stk_35.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_22",
+    "name": "Depoimentos Pacientes",
+    "cover_image": "/HOF_Stories_37/22_full_face.png",
+    "stickers": [
+      {
+        "id": "stk_36",
+        "file": "stk_36.svg"
+      },
+      {
+        "id": "stk_37",
+        "file": "stk_37.svg"
+      },
+      {
+        "id": "stk_38",
+        "file": "stk_38.svg"
+      },
+      {
+        "id": "stk_39",
+        "file": "stk_39.svg"
+      },
+      {
+        "id": "stk_4",
+        "file": "stk_4.svg"
+      },
+      {
+        "id": "stk_40",
+        "file": "stk_40.svg"
+      },
+      {
+        "id": "stk_41",
+        "file": "stk_41.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_23",
+    "name": "Autoestima Beleza",
+    "cover_image": "/HOF_Stories_37/23_md_codes.png",
+    "stickers": [
+      {
+        "id": "stk_42",
+        "file": "stk_42.svg"
+      },
+      {
+        "id": "stk_43",
+        "file": "stk_43.svg"
+      },
+      {
+        "id": "stk_44",
+        "file": "stk_44.svg"
+      },
+      {
+        "id": "stk_45",
+        "file": "stk_45.svg"
+      },
+      {
+        "id": "stk_46",
+        "file": "stk_46.svg"
+      },
+      {
+        "id": "stk_47",
+        "file": "stk_47.svg"
+      },
+      {
+        "id": "stk_48",
+        "file": "stk_48.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_24",
+    "name": "Transformacao Sorriso",
+    "cover_image": "/HOF_Stories_37/24_anatomia_estudos.png",
+    "stickers": [
+      {
+        "id": "stk_49",
+        "file": "stk_49.svg"
+      },
+      {
+        "id": "stk_5",
+        "file": "stk_5.svg"
+      },
+      {
+        "id": "stk_50",
+        "file": "stk_50.svg"
+      },
+      {
+        "id": "stk_51",
+        "file": "stk_51.svg"
+      },
+      {
+        "id": "stk_52",
+        "file": "stk_52.svg"
+      },
+      {
+        "id": "stk_53",
+        "file": "stk_53.svg"
+      },
+      {
+        "id": "stk_54",
+        "file": "stk_54.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_25",
+    "name": "Tecnologias HOF",
+    "cover_image": "/HOF_Stories_37/25_bioestimulador_colageno.png",
+    "stickers": [
+      {
+        "id": "stk_55",
+        "file": "stk_55.svg"
+      },
+      {
+        "id": "stk_56",
+        "file": "stk_56.svg"
+      },
+      {
+        "id": "stk_57",
+        "file": "stk_57.svg"
+      },
+      {
+        "id": "stk_58",
+        "file": "stk_58.svg"
+      },
+      {
+        "id": "stk_59",
+        "file": "stk_59.svg"
+      },
+      {
+        "id": "stk_6",
+        "file": "stk_6.svg"
+      },
+      {
+        "id": "stk_60",
+        "file": "stk_60.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_26",
+    "name": "Cuidados Diarios",
+    "cover_image": "/HOF_Stories_37/26_bom_dia.png",
+    "stickers": [
+      {
+        "id": "stk_61",
+        "file": "stk_61.svg"
+      },
+      {
+        "id": "stk_62",
+        "file": "stk_62.svg"
+      },
+      {
+        "id": "stk_63",
+        "file": "stk_63.svg"
+      },
+      {
+        "id": "stk_64",
+        "file": "stk_64.svg"
+      },
+      {
+        "id": "stk_65",
+        "file": "stk_65.svg"
+      },
+      {
+        "id": "stk_66",
+        "file": "stk_66.svg"
+      },
+      {
+        "id": "stk_67",
+        "file": "stk_67.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_27",
+    "name": "Promocoes Campanhas",
+    "cover_image": "/HOF_Stories_37/27_calendario_outubro_2026.png",
+    "stickers": [
+      {
+        "id": "stk_68",
+        "file": "stk_68.svg"
+      },
+      {
+        "id": "stk_69",
+        "file": "stk_69.svg"
+      },
+      {
+        "id": "stk_7",
+        "file": "stk_7.svg"
+      },
+      {
+        "id": "stk_70",
+        "file": "stk_70.svg"
+      },
+      {
+        "id": "stk_71",
+        "file": "stk_71.svg"
+      },
+      {
+        "id": "stk_72",
+        "file": "stk_72.svg"
+      },
+      {
+        "id": "stk_73",
+        "file": "stk_73.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_28",
+    "name": "Seguranca Protocolos",
+    "cover_image": "/HOF_Stories_37/28_cirurgias_face.png",
+    "stickers": [
+      {
+        "id": "stk_74",
+        "file": "stk_74.svg"
+      },
+      {
+        "id": "stk_75",
+        "file": "stk_75.svg"
+      },
+      {
+        "id": "stk_76",
+        "file": "stk_76.svg"
+      },
+      {
+        "id": "stk_77",
+        "file": "stk_77.svg"
+      },
+      {
+        "id": "stk_78",
+        "file": "stk_78.svg"
+      },
+      {
+        "id": "stk_79",
+        "file": "stk_79.svg"
+      },
+      {
+        "id": "stk_8",
+        "file": "stk_8.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_29",
+    "name": "Perguntas Frequentes",
+    "cover_image": "/HOF_Stories_37/29_educacao_rapida.png",
+    "stickers": [
+      {
+        "id": "stk_80",
+        "file": "stk_80.svg"
+      },
+      {
+        "id": "stk_81",
+        "file": "stk_81.svg"
+      },
+      {
+        "id": "stk_82",
+        "file": "stk_82.svg"
+      },
+      {
+        "id": "stk_83",
+        "file": "stk_83.svg"
+      },
+      {
+        "id": "stk_84",
+        "file": "stk_84.svg"
+      },
+      {
+        "id": "stk_85",
+        "file": "stk_85.svg"
+      },
+      {
+        "id": "stk_86",
+        "file": "stk_86.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_30",
+    "name": "Mitos e Verdades",
+    "cover_image": "/HOF_Stories_37/30_estetica_masculina.png",
+    "stickers": [
+      {
+        "id": "stk_87",
+        "file": "stk_87.svg"
+      },
+      {
+        "id": "stk_88",
+        "file": "stk_88.svg"
+      },
+      {
+        "id": "stk_89",
+        "file": "stk_89.svg"
+      },
+      {
+        "id": "stk_9",
+        "file": "stk_9.svg"
+      },
+      {
+        "id": "stk_90",
+        "file": "stk_90.svg"
+      },
+      {
+        "id": "stk_91",
+        "file": "stk_91.svg"
+      },
+      {
+        "id": "stk_92",
+        "file": "stk_92.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_31",
+    "name": "Bastidores Clinica",
+    "cover_image": "/HOF_Stories_37/31_instagram_icones.png",
+    "stickers": [
+      {
+        "id": "stk_93",
+        "file": "stk_93.svg"
+      },
+      {
+        "id": "stk_94",
+        "file": "stk_94.svg"
+      },
+      {
+        "id": "stk_95",
+        "file": "stk_95.svg"
+      },
+      {
+        "id": "stk_96",
+        "file": "stk_96.svg"
+      },
+      {
+        "id": "stk_97",
+        "file": "stk_97.svg"
+      },
+      {
+        "id": "stk_98",
+        "file": "stk_98.svg"
+      },
+      {
+        "id": "stk_99",
+        "file": "stk_99.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_32",
+    "name": "Novidades Tendencias",
+    "cover_image": "/HOF_Stories_37/32_lifestyle_viagens_carreira.png",
+    "stickers": [
+      {
+        "id": "stk_sticker_card_18801_3",
+        "file": "stk_sticker_card_18801_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18801_4",
+        "file": "stk_sticker_card_18801_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18802_3",
+        "file": "stk_sticker_card_18802_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18803_4",
+        "file": "stk_sticker_card_18803_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18804_3",
+        "file": "stk_sticker_card_18804_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18806_3",
+        "file": "stk_sticker_card_18806_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18806_5",
+        "file": "stk_sticker_card_18806_5.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_33",
+    "name": "Harmonia Naturalidade",
+    "cover_image": "/HOF_Stories_37/33_produtos_equipamentos.png",
+    "stickers": [
+      {
+        "id": "stk_sticker_card_18901_1",
+        "file": "stk_sticker_card_18901_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_18901_2",
+        "file": "stk_sticker_card_18901_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_18901_3",
+        "file": "stk_sticker_card_18901_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18901_4",
+        "file": "stk_sticker_card_18901_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18901_5",
+        "file": "stk_sticker_card_18901_5.svg"
+      },
+      {
+        "id": "stk_sticker_card_18901_6",
+        "file": "stk_sticker_card_18901_6.svg"
+      },
+      {
+        "id": "stk_sticker_card_18902_3",
+        "file": "stk_sticker_card_18902_3.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_34",
+    "name": "Rejuvenescimento",
+    "cover_image": "/HOF_Stories_37/34_sombras_elementos.png",
+    "stickers": [
+      {
+        "id": "stk_sticker_card_18902_4",
+        "file": "stk_sticker_card_18902_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18903_1",
+        "file": "stk_sticker_card_18903_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_18903_2",
+        "file": "stk_sticker_card_18903_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_18903_3",
+        "file": "stk_sticker_card_18903_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18903_4",
+        "file": "stk_sticker_card_18903_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18903_5",
+        "file": "stk_sticker_card_18903_5.svg"
+      },
+      {
+        "id": "stk_sticker_card_18903_6",
+        "file": "stk_sticker_card_18903_6.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_35",
+    "name": "Protocolos Exclusivos",
+    "cover_image": "/HOF_Stories_37/35_fios_pdo.png",
+    "stickers": [
+      {
+        "id": "stk_sticker_card_18904_3",
+        "file": "stk_sticker_card_18904_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18904_4",
+        "file": "stk_sticker_card_18904_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18905_1",
+        "file": "stk_sticker_card_18905_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_18905_2",
+        "file": "stk_sticker_card_18905_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_18905_3",
+        "file": "stk_sticker_card_18905_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18905_4",
+        "file": "stk_sticker_card_18905_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_18905_5",
+        "file": "stk_sticker_card_18905_5.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_36",
+    "name": "Equipe Profissional",
+    "cover_image": "/HOF_Stories_37/36_devocional.png",
+    "stickers": [
+      {
+        "id": "stk_sticker_card_18905_6",
+        "file": "stk_sticker_card_18905_6.svg"
+      },
+      {
+        "id": "stk_sticker_card_18906_3",
+        "file": "stk_sticker_card_18906_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_18906_5",
+        "file": "stk_sticker_card_18906_5.svg"
+      },
+      {
+        "id": "stk_sticker_card_19101_1",
+        "file": "stk_sticker_card_19101_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_19101_2",
+        "file": "stk_sticker_card_19101_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_19101_3",
+        "file": "stk_sticker_card_19101_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_19101_4",
+        "file": "stk_sticker_card_19101_4.svg"
+      }
+    ]
+  },
+  {
+    "id": "cat_37",
+    "name": "Agradecimentos Encerramento",
+    "cover_image": "/HOF_Stories_37/37_new_face.png",
+    "stickers": [
+      {
+        "id": "stk_sticker_card_19102_1",
+        "file": "stk_sticker_card_19102_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_19102_2",
+        "file": "stk_sticker_card_19102_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_19102_3",
+        "file": "stk_sticker_card_19102_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_19102_4",
+        "file": "stk_sticker_card_19102_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_19103_1",
+        "file": "stk_sticker_card_19103_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_19103_2",
+        "file": "stk_sticker_card_19103_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_19103_3",
+        "file": "stk_sticker_card_19103_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_19103_4",
+        "file": "stk_sticker_card_19103_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_19104_1",
+        "file": "stk_sticker_card_19104_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_19104_2",
+        "file": "stk_sticker_card_19104_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_19105_1",
+        "file": "stk_sticker_card_19105_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_19105_2",
+        "file": "stk_sticker_card_19105_2.svg"
+      },
+      {
+        "id": "stk_sticker_card_19105_3",
+        "file": "stk_sticker_card_19105_3.svg"
+      },
+      {
+        "id": "stk_sticker_card_19105_4",
+        "file": "stk_sticker_card_19105_4.svg"
+      },
+      {
+        "id": "stk_sticker_card_19105_6",
+        "file": "stk_sticker_card_19105_6.svg"
+      },
+      {
+        "id": "stk_sticker_card_19106_1",
+        "file": "stk_sticker_card_19106_1.svg"
+      },
+      {
+        "id": "stk_sticker_card_19106_2",
+        "file": "stk_sticker_card_19106_2.svg"
+      }
+    ]
+  }
+]

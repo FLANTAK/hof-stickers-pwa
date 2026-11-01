@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%">
+  <circle cx="70" cy="80" r="10" fill="currentColor" />
+  <circle cx="140" cy="60" r="10" fill="currentColor" />
+  <circle cx="200" cy="50" r="12" fill="currentColor" />
+  <circle cx="260" cy="60" r="10" fill="currentColor" />
+  <circle cx="330" cy="80" r="10" fill="currentColor" />
+  <path d="M 70 80 Q 200 40 330 80" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="6,6" opacity="0.6" />
+</svg>
