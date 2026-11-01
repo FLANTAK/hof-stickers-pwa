@@ -984,6 +984,14 @@
       <!-- Grid de Figurinhas -->
       <section id="viewCategory" style="display: none;">
         <div class="pills-scroll" id="categoryPillsScroll"></div>
+        <!-- Barra de Ações Admin (Exclusiva para Felipe & Lyvia) -->
+        <div id="categoryAdminBar" class="admin-actions-bar">
+          <div style="font-size: 0.76rem; color: #c5a880; font-weight: 700;">Painel Admin</div>
+          <div style="display: flex; gap: 8px;">
+            <button class="admin-btn" onclick="openAddStickerModal()">+ Nova Figurinha</button>
+            <button class="admin-btn" style="background: rgba(255,255,255,0.1); color: #fff;" onclick="openChangeCatModal()">Mudar Categoria</button>
+          </div>
+        </div>
         <div class="stickers-grid" id="categoryStickersGrid"></div>
       </section>
 
@@ -1259,6 +1267,7 @@
 
     function renderPills() {
       const scroll = document.getElementById('categoryPillsScroll');
+      if (!scroll) return;
       scroll.innerHTML = '';
       catalog.forEach(c => {
         const btn = document.createElement('button');
@@ -1266,6 +1275,9 @@
         btn.textContent = c.name;
         btn.onclick = () => openCategory(c.id);
         scroll.appendChild(btn);
+        if (c.id === currentCategoryId) {
+          setTimeout(() => btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }), 50);
+        }
       });
     }
 
@@ -1317,6 +1329,14 @@
         `;
 
         card.onclick = () => copyStickerToClipboard(s.file, customColors[s.id] || globalColor || '#ffffff');
+        // Botão de deletar para Admins
+        const delBtn = document.createElement('button');
+        delBtn.className = 'admin-del-btn';
+        delBtn.title = 'Remover figurinha';
+        delBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+        delBtn.onclick = (e) => removeStickerAdmin(s.id, e);
+        card.appendChild(delBtn);
+
         grid.appendChild(card);
 
         // Injeta o SVG inline para troca dinâmica instantânea de cor
@@ -1599,40 +1619,61 @@
 
     
     // Validação de Acesso PWA com Supabase
+    // Autenticação Real Supabase Auth (Email + Senha)
+    let currentUserSession = null;
+    let currentUserRole = 'member'; // 'admin' ou 'member'
+
     async function handlePwaLogin() {
       const email = document.getElementById('loginEmailInput').value.trim().toLowerCase();
       const pwd = document.getElementById('loginPasswordInput').value.trim();
       const feedback = document.getElementById('loginFeedbackMsg');
       const btn = document.getElementById('btnLoginSubmit');
 
-      if (!email) {
-        feedback.textContent = 'Por favor, digite seu e-mail de compra.';
+      if (!email || !pwd) {
+        feedback.textContent = 'Digite seu e-mail e sua senha de acesso.';
         feedback.style.display = 'block';
         return;
       }
 
       btn.disabled = true;
-      btn.textContent = 'Verificando acesso...';
+      btn.textContent = 'Verificando credenciais...';
       feedback.style.display = 'none';
 
       try {
-        const res = await fetch(`https://ogillmpewogoynuaxmvk.supabase.co/rest/v1/app_members?email=eq.${encodeURIComponent(email)}&status=eq.active&select=*`, {
+        const res = await fetch('https://ogillmpewogoynuaxmvk.supabase.co/auth/v1/token?grant_type=password', {
+          method: 'POST',
           headers: {
             'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9naWxsbXBld29nb3ludWF4bXZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0Njc0NTksImV4cCI6MjEwOTA0MzQ1OX0.9_CT5_UsN8Wu6hBNKl1Gc9VcQ3t6Z5hJTpszk_Z-2HU',
-            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9naWxsbXBld29nb3ludWF4bXZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM0Njc0NTksImV4cCI6MjEwOTA0MzQ1OX0.9_CT5_UsN8Wu6hBNKl1Gc9VcQ3t6Z5hJTpszk_Z-2HU'
-          }
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email: email, password: pwd })
         });
-        const members = await res.json();
-        
-        if (members && members.length > 0) {
-          localStorage.setItem('hof_pwa_authenticated_user', email);
+
+        const authData = await res.json();
+
+        if (res.ok && authData.access_token) {
+          currentUserSession = authData;
+          currentUserRole = (authData.user && authData.user.user_metadata && authData.user.user_metadata.role) || 'member';
+          if (email === 'flowmediaagencia@gmail.com' || email === 'contatolyviavieira@gmail.com') {
+            currentUserRole = 'admin';
+          }
+
+          localStorage.setItem('hof_auth_session', JSON.stringify({
+            email: email,
+            role: currentUserRole,
+            token: authData.access_token,
+            expires_at: Date.now() + (authData.expires_in || 3600) * 1000
+          }));
+
           document.getElementById('pwaLoginScreen').style.display = 'none';
-          showToast(`Bem-vinda(o), ${members[0].name || 'Membro'}!`);
+          checkAdminUI();
+          showToast(`Bem-vinda(o), ${authData.user?.user_metadata?.name || 'Membro'}!`);
         } else {
-          feedback.textContent = 'E-mail não autorizado. Adquira seu acesso na página oficial.';
+          feedback.textContent = 'E-mail ou senha incorretos. Verifique suas credenciais.';
           feedback.style.display = 'block';
         }
       } catch (err) {
+        console.error(err);
         feedback.textContent = 'Erro ao conectar. Tente novamente.';
         feedback.style.display = 'block';
       } finally {
@@ -1641,64 +1682,111 @@
       }
     }
 
-    // Auto-login se já tiver sessão salva no celular
-    const savedSession = localStorage.getItem('hof_pwa_authenticated_user');
-    if (savedSession) {
-      document.getElementById('pwaLoginScreen').style.display = 'none';
+    function checkAdminUI() {
+      const isAdmin = currentUserRole === 'admin';
+      const adminBar = document.getElementById('categoryAdminBar');
+      if (adminBar) adminBar.style.display = isAdmin ? 'flex' : 'none';
+      document.querySelectorAll('.admin-del-btn').forEach(btn => {
+        btn.style.display = isAdmin ? 'flex' : 'none';
+      });
+      const adminMenuOption = document.getElementById('menuAdminBadge');
+      if (adminMenuOption) adminMenuOption.style.display = isAdmin ? 'block' : 'none';
     }
 
-    
-    function toggleUserMenuModal() {
-      const modal = document.getElementById('userMenuModal');
-      if (!modal) return;
-      modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
-    }
-
-    function handleLogout() {
-      localStorage.removeItem('hof_pwa_authenticated_user');
-      toggleUserMenuModal();
-      const loginScreen = document.getElementById('pwaLoginScreen');
-      if (loginScreen) {
-        loginScreen.style.display = 'flex';
-      }
-      showToast('Sessão encerrada com sucesso');
-    }
-    
-    
-    
-    // Suporte a Instalação Automática Direta (1 Clique do E-mail)
-    let deferredPrompt = null;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get('install') === 'true' || window.location.hash === '#install') {
-        promptPwaInstall();
-      }
-
-      const topInstallBar = document.getElementById('directInstallBanner');
-      if (topInstallBar) topInstallBar.style.display = 'flex';
-    });
-
-    async function promptPwaInstall() {
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
-          showToast('App instalado com sucesso!');
+    // Auto-login se sessão salva for válida
+    const savedSessionRaw = localStorage.getItem('hof_auth_session');
+    if (savedSessionRaw) {
+      try {
+        const sess = JSON.parse(savedSessionRaw);
+        if (sess && sess.token) {
+          currentUserRole = sess.role || 'member';
+          document.getElementById('pwaLoginScreen').style.display = 'none';
+          setTimeout(checkAdminUI, 500);
         }
-        deferredPrompt = null;
-      } else {
-        // Se for iOS ou navegador sem prompt automático
-        showToast('Toque em Compartilhar e depois "Adicionar à Tela de Início"');
+      } catch(e) {}
+    }
+    
+    
+    // Suporte a Swipe Horizontal para Mudar de Categoria
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    const catViewEl = document.getElementById('viewCategory');
+    if (catViewEl) {
+      catViewEl.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        touchStartY = e.changedTouches[0].screenY;
+      }, { passive: true });
+
+      catViewEl.addEventListener('touchend', e => {
+        const touchEndX = e.changedTouches[0].screenX;
+        const touchEndY = e.changedTouches[0].screenY;
+        handleSwipeGesture(touchStartX, touchStartY, touchEndX, touchEndY);
+      }, { passive: true });
+    }
+
+    function handleSwipeGesture(startX, startY, endX, endY) {
+      const diffX = endX - startX;
+      const diffY = endY - startY;
+
+      // Só ativa se o movimento for predominantemente horizontal e > 50px
+      if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
+        const currentIdx = catalog.findIndex(c => c.id === currentCategoryId);
+        if (currentIdx === -1) return;
+
+        if (diffX < 0 && currentIdx < catalog.length - 1) {
+          // Swipe para a esquerda -> Próxima Categoria
+          openCategory(catalog[currentIdx + 1].id);
+        } else if (diffX > 0 && currentIdx > 0) {
+          // Swipe para a direita -> Categoria Anterior
+          openCategory(catalog[currentIdx - 1].id);
+        }
+      }
+    }
+    
+    
+    function removeStickerAdmin(stickerId, e) {
+      if (e) e.stopPropagation();
+      if (!confirm('Deseja remover esta figurinha desta categoria?')) return;
+
+      const cat = catalog.find(c => c.id === currentCategoryId);
+      if (cat) {
+        cat.stickers = cat.stickers.filter(s => s.id !== stickerId);
+        renderCategoryStickers(cat);
+        checkAdminUI();
+        showToast('Figurinha removida');
       }
     }
 
-    window.addEventListener('appinstalled', () => {
-      showToast('HOF Stories instalado!');
-    });
+    function openAddStickerModal() {
+      const name = prompt('Nome da nova figurinha (ex: Bioestimulador Glúteo):');
+      if (!name) return;
+      const file = prompt('Nome do arquivo SVG (ex: stk_1.svg):', 'stk_1.svg');
+      if (!file) return;
 
+      const cat = catalog.find(c => c.id === currentCategoryId);
+      if (cat) {
+        const newId = 'stk_custom_' + Date.now();
+        cat.stickers.unshift({ id: newId, file: file, title: name });
+        renderCategoryStickers(cat);
+        checkAdminUI();
+        showToast('Nova figurinha adicionada com sucesso!');
+      }
+    }
+
+    function openChangeCatModal() {
+      const newName = prompt('Novo nome para esta categoria:', catalog.find(c => c.id === currentCategoryId)?.name || '');
+      if (newName) {
+        const cat = catalog.find(c => c.id === currentCategoryId);
+        if (cat) {
+          cat.name = newName;
+          document.getElementById('appHeaderTitle').textContent = newName;
+          renderPills();
+          showToast('Nome da categoria atualizado!');
+        }
+      }
+    }
+    
     initApp();
   </script>
 </body>
